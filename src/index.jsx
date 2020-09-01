@@ -5,12 +5,13 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 // internal modules
-import App from './components/app';
+import App from './components/app.jsx';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  cities: CitiesReducer
+  // changeMe: (state = null, action) => state
 });
 
 // render an instance of the component in the DOM
