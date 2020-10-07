@@ -1,12 +1,17 @@
-import cities from '../cities.jsx';
+const ADD_CITY = 'ADD_CITY';
+const SET_CITY = 'SET_CITY';
 
-export function setCity() {
-  // TODO: API call
-  // for now we simulate a DB
-
+export const addCity = (city) => {
   return {
-    type: ‘SET_CITY’,
-    payload: cities
+    type: ADD_CITY,
+    city: city
+  }
+}
+
+export const setCity = (city) => {
+  return {
+    type: SET_CITY,
+    city: city
   }
 }
 

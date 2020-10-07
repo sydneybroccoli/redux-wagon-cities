@@ -5,9 +5,7 @@ import { bindActionCreators } from 'redux';
 import { City } from './city.jsx';
 
 export class CityList extends React.Component {
-  componentWillMount() {
-
-  }
+  componentWillMount() {}
 
   render() {
     return(
