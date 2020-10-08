@@ -1,13 +1,17 @@
 import React from 'react';
 import { CityList } from '../containers/city_list.jsx';
 
-const App = ({ cities }) => {
-  return (
-    <div className="app">
-      <CityList
-        cities={cities} />
-    </div>
-  );
-};
+export class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default App;
+  render() {
+    return (
+      <div className="app">
+        <CityList
+          cities={this.props.cities} />
+      </div>
+    ); 
+  }
+}

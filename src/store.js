@@ -5,3 +5,4 @@ import { rootReducer } from './reducers/index.js';
 export const configStore = ( state = cityDB ) => {
   return createStore( rootReducer, state );
 }
+
