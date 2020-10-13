@@ -1,16 +1,15 @@
 import React from 'react';
-import { CityList } from '../containers/city_list.jsx';
+import { connect } from 'react-redux';
+
+import { default as CityList } from '../containers/city_list.jsx';
+import { default as ActiveCity } from '../containers/active_city.jsx';
 
 export class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="app">
-        <CityList
-          cities={this.props.cities} />
+        <CityList />
+        <ActiveCity />
       </div>
     ); 
   }

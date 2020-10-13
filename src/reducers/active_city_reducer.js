@@ -1,10 +1,9 @@
-const ADD_CITY = 'ADD_CITY';
 const SET_CITY = 'SET_CITY';
 
-export const CitiesReducer = ( state = null, action ) => {
+export const ActiveCityReducer = ( state = null, action ) => {
   switch(action.type) {
     case SET_CITY: {
-      state
+      return action.city
     }
     default: {
       return state;

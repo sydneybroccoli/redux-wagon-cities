@@ -1,15 +1,32 @@
 import React from 'react';
+import { dispatch, connect } from 'react-redux';
+import { setCity } from '../actions/index.js';
 
-export class City extends React.Component {
-  render () {
+class City extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     return(
-      <div
-        className="city"
-        id={this.props.name} >
-        <div className="city-name">
-          {this.props.city.name}
-        </div>
-      </div>
+      <li
+        className="list-group-item"
+        id={ this.props.city.name }
+        onClick={ (e) => {
+          this.props.selectCity( this.props.city ) 
+        }} >
+        {this.props.city.name}
+      </li>
     )
   }
 }
+
+const mapDispatchToProps = ( dispatch ) => {
+  return {
+    selectCity: (city) => {
+      dispatch( setCity(city) );
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(City);

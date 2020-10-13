@@ -2,14 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { City } from './city.jsx';
+import { default as City } from './city.jsx';
 
-export class CityList extends React.Component {
+class CityList extends React.Component {
   componentWillMount() {}
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cities: props.cities
+    }
+  }
+
 
   render() {
     return(
-      <div className="city-list">
+      <ul className="list-group cities">
         {this.props.cities.map( (city, index) => {
           return(
             <City
@@ -17,11 +26,13 @@ export class CityList extends React.Component {
               city={city} />
           )
         })}
-      </div>
+      </ul>
     )
   }
 }
 
-// MAP DISPATCH
+const mapStateToProps = ( state ) => {
+  return state
+}
 
-// MAP STATE TO PROPS
+export default connect(mapStateToProps)(CityList);

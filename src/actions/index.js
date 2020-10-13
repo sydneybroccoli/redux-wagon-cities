@@ -1,5 +1,5 @@
-const ADD_CITY = 'ADD_CITY';
-const SET_CITY = 'SET_CITY';
+export const ADD_CITY = 'ADD_CITY';
+export const SET_CITY = 'SET_CITY';
 
 export const addCity = (city) => {
   return {
